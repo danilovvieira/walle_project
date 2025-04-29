@@ -1,6 +1,0 @@
-Invoking command in '/home/danilo/walle_ws/build/walle_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/danilo/walle_ws/src/walle_description -DCMAKE_INSTALL_PREFIX=/home/danilo/walle_ws/install/walle_description
-Invoked command in '/home/danilo/walle_ws/build/walle_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/danilo/walle_ws/src/walle_description -DCMAKE_INSTALL_PREFIX=/home/danilo/walle_ws/install/walle_description
-Invoking command in '/home/danilo/walle_ws/build/walle_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/danilo/walle_ws/build/walle_description -- -j8 -l8
-Invoked command in '/home/danilo/walle_ws/build/walle_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/danilo/walle_ws/build/walle_description -- -j8 -l8
-Invoking command in '/home/danilo/walle_ws/build/walle_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/danilo/walle_ws/build/walle_description
-Invoked command in '/home/danilo/walle_ws/build/walle_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/danilo/walle_ws/build/walle_description
