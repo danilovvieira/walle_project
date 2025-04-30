@@ -22,7 +22,7 @@ def generate_launch_description():
     spawn_entity = Node(
         package='gazebo_ros',
         executable='spawn_entity.py',
-        arguments=['-entity', 'walle', '-file', urdf_file, '-x', '0', '-y', '0', '-z', '0.1'],
+        arguments=['-entity', 'walle', '-file', urdf_file, '-x', '0', '-y', '0', '-z', '0.2'],
         output='screen'
     )
 
