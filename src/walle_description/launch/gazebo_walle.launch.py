@@ -32,9 +32,12 @@ def generate_launch_description():
         executable='robot_state_publisher',
         name='robot_state_publisher',
         output='screen',
-        parameters=[{'use_sim_time': True}],
-        arguments=[urdf_file]
+        parameters=[
+            {'use_sim_time': True,
+           'robot_description': open(urdf_file).read()}
+        ]
     )
+
 
     # Joint state publisher
     joint_state_publisher = Node(
