@@ -10,12 +10,12 @@ def generate_launch_description():
     package_name = 'walle_description'
     urdf_file = os.path.join(get_package_share_directory(package_name), 'urdf', 'walle.urdf')
 
-    # Launch Gazebo
+    # Launch Gazebo with the obstacle world
     gazebo_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(get_package_share_directory('gazebo_ros'), 'launch', 'gazebo.launch.py')
         ),
-        launch_arguments={'world': os.path.join(get_package_share_directory(package_name), 'worlds', 'empty.world')}.items()
+        launch_arguments={'world': os.path.join(get_package_share_directory(package_name), 'worlds', 'obstacle_world.world')}.items()
     )
 
     # Spawn the robot in Gazebo
@@ -34,10 +34,9 @@ def generate_launch_description():
         output='screen',
         parameters=[
             {'use_sim_time': True,
-           'robot_description': open(urdf_file).read()}
+             'robot_description': open(urdf_file).read()}
         ]
     )
-
 
     # Joint state publisher
     joint_state_publisher = Node(

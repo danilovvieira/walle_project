@@ -38,12 +38,12 @@ class ObstacleAvoidanceNode(Node):
             # Exibir valores brutos dos pontos para depuração
             self.get_logger().info(f'Raw points: {[point for point in points]}')
             # Calcular a distância mínima (usando a coordenada x)
-            distances = [abs(point[0]) for point in points if 0.02 <= abs(point[0]) <= 0.9]  # Reflete o range do URDF
+            distances = [abs(point[0]) for point in points if 0.02 <= abs(point[0]) <= 0.85]  # Reflete o range do URDF
             if distances:
                 self.front_distance = min(distances)
                 self.get_logger().info(f'Front Distance: {self.front_distance:.2f} m')
                 # Definir a distância do chão apenas se for o valor máximo (sem obstáculo)
-                if self.ground_distance == float('inf') and self.front_distance == 0.9:
+                if self.ground_distance == float('inf') and self.front_distance == 0.85:
                     self.ground_distance = self.front_distance
                     self.get_logger().info(f'Ground distance set to: {self.ground_distance:.2f} m')
             else:
@@ -75,7 +75,7 @@ class ObstacleAvoidanceNode(Node):
         if self.front_distance < OBSTACLE_THRESHOLD and self.front_distance != float('inf'):
             # Obstáculo à frente: parar e girar
             self.twist.linear.x = 0.0
-            self.twist.angular.z = 1.0  # Girar à esquerda
+            self.twist.angular.z = 2.3  # Girar à esquerda
             self.initial_yaw = None  # Resetar o yaw inicial ao girar intencionalmente
             self.get_logger().info('Obstacle ahead! Turning...')
         else:
